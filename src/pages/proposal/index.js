@@ -3,15 +3,14 @@ import Grid from '@mui/material/Grid'
 import Card from '@mui/material/Card'
 import Typography from '@mui/material/Typography'
 import CardContent from '@mui/material/CardContent'
-import { CardActionArea, CardActions } from '@mui/material';
+import { CardActionArea } from '@mui/material';
 import Format from './format';
 import Template from './Template';
 import Jatuh from './Jatuh';
 import Pengingat from './Pengingat';
 import TemplatePengingat from './TemplatePengingat';
 import Button from '@mui/material/Button';
-import Stack from '@mui/material/Stack';
-import { margin } from '@mui/system';
+import Syarat from './Syarat';
 
 
 function Invoice() {
@@ -29,10 +28,10 @@ function Invoice() {
         <CardActionArea>
           <CardContent>
             <Typography gutterBottom variant="h5" color="black" component="div">
-              Pengaturan invoice
+              Pengaturan proposal
             </Typography>
             <Typography variant="body2" color="black">
-              Kostumisasi invoice
+              Kostumisasi proposal
             </Typography>
           </CardContent>
         </CardActionArea>
@@ -43,6 +42,10 @@ function Invoice() {
         {/* Template email */}
 
         <Template />
+
+        {/* Syarat dan ketentuan */}
+
+        <Syarat />
 
         {/* Jatuh tempo */}
 

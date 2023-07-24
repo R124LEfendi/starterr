@@ -5,18 +5,16 @@ import { CardActions } from '@mui/material';
 import { Box } from '@mui/material';
 import TextField from '@mui/material/TextField';
 
-
-function Format() {
+function Pos() {
   return (
-
     <CardActions>
       <Grid container spacing={5}>
         <Grid item xs={3.8}>
           <Typography>
-            Format Nomor <span style={{ color: 'red' }}>*</span>
+            Pos
           </Typography>
         </Grid>
-        <Grid item xs={12} sm container>
+        <Grid item xs={12} sm container style={{ padding: "0", height: "5", margin: "0" }}>
           <Grid item xs container direction="column" spacing={2}>
 
             <Grid item xs>
@@ -28,10 +26,8 @@ function Format() {
                 noValidate
                 autoComplete="off"
               >
-                <TextField fullWidth label="Harus diisi" Required id="fullWidth" defaultValue="Proposal/@tahun/@bulan/@hari" />
-                <Typography ml={3}>
-                  Variabel : <button disabled color="purple">@tahun</button> <button disabled color="purple">@bulan</button> <button disabled color="purple">@hari</button>
-                </Typography>
+                <TextField label="Pos" id="fullWidth" />
+
               </Box>
             </Grid>
 
@@ -39,7 +35,7 @@ function Format() {
         </Grid>
       </Grid>
     </CardActions>
-  );
+  )
 }
 
-export default Format
+export default Pos

@@ -1,36 +1,68 @@
 // ** MUI Imports
-import Card from '@mui/material/Card'
 import Grid from '@mui/material/Grid'
+import Card from '@mui/material/Card'
 import Typography from '@mui/material/Typography'
-import CardHeader from '@mui/material/CardHeader'
 import CardContent from '@mui/material/CardContent'
+import { CardActionArea } from '@mui/material';
+import Button from '@mui/material/Button';
+import Nama from './Nama';
+import Email from './Email';
+import Website from './Website';
+import Telephone from './Telephone';
+import Fax from './Fax';
+import Alamat from './Alamat';
+import Pos from './Pos';
+import Npwp from './Npwp';
 
-const Home = () => {
+function Home() {
+
+  const simpan = {
+    display: 'flex',
+    justifyContent: 'flex-end',
+    margin: '10px',
+  }
+
   return (
-    <Grid container spacing={6}>
-      <Grid item xs={12}>
-        <Card>
-          <CardHeader title='Kick start your project 🚀'></CardHeader>
+    <Grid item md={6} xs={12}>
+      <Card>
+
+        <CardActionArea>
           <CardContent>
-            <Typography sx={{ mb: 2 }}>All the best for your new project.</Typography>
-            <Typography>
-              Please make sure to read our Template Documentation to understand where to go from here and how to use our
-              template.
+            <Typography gutterBottom variant="h5" color="black" component="div">
+              Informasi Perusahaan
+            </Typography>
+            <Typography variant="body2" color="black">
+              Informasi perusahaan akan ditampilkan dalam proposal dan invoice
             </Typography>
           </CardContent>
-        </Card>
-      </Grid>
-      <Grid item xs={12}>
-        <Card>
-          <CardHeader title='ACL and JWT 🔒'></CardHeader>
-          <CardContent>
-            <Typography sx={{ mb: 2 }}>
-              Access Control (ACL) and Authentication (JWT) are the two main security features of our template and are implemented in the starter-kit as well.
-            </Typography>
-            <Typography>Please read our Authentication and ACL Documentations to get more out of them.</Typography>
-          </CardContent>
-        </Card>
-      </Grid>
+        </CardActionArea>
+
+        <Nama />
+
+        <Email />
+
+        <Website />
+
+        <Telephone />
+
+        <Fax />
+
+        <Alamat />
+
+        <Pos />
+
+        <Npwp />
+
+
+        <div className='simpan' style={simpan}>
+
+          <Button ml="50px" variant="contained" color="success">
+            Simpan &#x2713;
+          </Button>
+        </div>
+        <br />
+
+      </Card>
     </Grid>
   )
 }

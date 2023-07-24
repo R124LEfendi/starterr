@@ -8,7 +8,7 @@ const navigation = () => {
     {
       title: 'Currency',
       path: '/mata-uang',
-      icon: 'tabler:bussinessplan',
+      icon: 'tabler:coin',
     },
     {
       title: 'Second Page',

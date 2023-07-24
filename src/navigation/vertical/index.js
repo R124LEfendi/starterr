@@ -6,6 +6,11 @@ const navigation = () => {
       icon: 'tabler:smart-home',
     },
     {
+      title: 'Currency',
+      path: '/mata-uang',
+      icon: 'tabler:bussinessplan',
+    },
+    {
       title: 'Second Page',
       path: '/second-page',
       icon: 'tabler:mail',

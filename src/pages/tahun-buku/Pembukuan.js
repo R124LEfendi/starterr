@@ -7,9 +7,10 @@ import Autocomplete from '@mui/material/Autocomplete';
 
 
 
-function Jatuh() {
 
-  const options = ['Hari yang sama', '1 hari', '3 hari', '7 hari', '14 hari', '30 hari', '60 hari', '90 hari'];
+function Pembukuan() {
+
+  const options = ['Jan-Des', 'Feb-Jan', 'Mar-Feb', 'Apr-Mar', 'Mei-Apr', 'Jun-Mei', 'Jul-Jun', 'Agu-Jul', 'Sep-Agu', 'Okt-Sep', 'Nov-Okt', 'Des-Nov'];
 
 
   const [value, setValue] = React.useState(options[0]);
@@ -20,7 +21,7 @@ function Jatuh() {
       <Grid container spacing={5}>
         <Grid item xs={3.8}>
           <Typography>
-            Jatuh Tempo <span style={{ color: 'red' }}>*</span>
+            Tahun Buku <span style={{ color: 'red' }}>*</span>
           </Typography>
         </Grid>
         <Grid item xs={12} sm container>
@@ -40,10 +41,10 @@ function Jatuh() {
                 id="controllable-states-demo"
                 options={options}
                 sx={{ width: 300 }}
-                renderInput={(params) => <TextField {...params} label="Hari yang sama" />}
+                renderInput={(params) => <TextField {...params} label="Pilih" />}
               />
               <Typography ml={3}>
-                Berapa lama invoice harus sudah dibayarkan lunas
+                Tahun buku yang paling banyak digunakan adalah periode Januari - Desember.
               </Typography>
 
             </Grid>
@@ -54,4 +55,4 @@ function Jatuh() {
   );
 };
 
-export default Jatuh
+export default Pembukuan

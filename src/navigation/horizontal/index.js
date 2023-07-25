@@ -5,9 +5,19 @@ const navigation = () => [
     icon: 'tabler:smart-home',
   },
   {
-    title: 'Currency',
+    title: 'Mata Uang',
     path: '/mata-uang',
     icon: 'tabler:bussiness-plan',
+  },
+  {
+    title: 'Tahun Buku',
+    path: '/tahun-buku',
+    icon: 'tabler:book-2',
+  },
+  {
+    title: 'Detail Bank',
+    path: '/detail-bank',
+    icon: 'tabler:building-bank',
   },
   {
     title: 'Second Page',

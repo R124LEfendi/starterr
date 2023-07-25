@@ -1,18 +1,14 @@
-import React from 'react';
+import React from 'react'
 import Grid from '@mui/material/Grid'
 import Card from '@mui/material/Card'
 import Typography from '@mui/material/Typography'
 import CardContent from '@mui/material/CardContent'
 import { CardActionArea } from '@mui/material';
-import Format from './format';
-import Template from './Template';
-import Jatuh from './Jatuh';
-import Pengingat from './Pengingat';
-import TemplatePengingat from './TemplatePengingat';
+
 import Button from '@mui/material/Button';
+import Pembukuan from './Pembukuan'
 
-
-function Invoice() {
+function TahunBuku() {
 
   const simpan = {
     display: 'flex',
@@ -27,32 +23,14 @@ function Invoice() {
         <CardActionArea>
           <CardContent>
             <Typography gutterBottom variant="h5" color="black" component="div">
-              Pengaturan invoice
-            </Typography>
-            <Typography variant="body2" color="black">
-              Kostumisasi invoice
+              Tahun buku
             </Typography>
           </CardContent>
         </CardActionArea>
 
-        {/* format nomor */}
-        <Format />
+        <Pembukuan />
 
-        {/* Template email */}
 
-        <Template />
-
-        {/* Jatuh tempo */}
-
-        <Jatuh />
-
-        {/* Pengingat */}
-
-        <Pengingat />
-
-        {/* Template pengingat */}
-
-        <TemplatePengingat />
 
         <div className='simpan' style={simpan}>
 
@@ -62,10 +40,10 @@ function Invoice() {
         </div>
         <br />
 
+
       </Card>
     </Grid>
   )
 }
 
-export default Invoice
-
+export default TahunBuku

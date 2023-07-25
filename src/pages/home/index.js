@@ -28,10 +28,10 @@ function Home() {
 
         <CardActionArea>
           <CardContent>
-            <Typography gutterBottom variant="h5" color="black" component="div">
+            <Typography gutterBottom variant="h5" component="div">
               Informasi Perusahaan
             </Typography>
-            <Typography variant="body2" color="black">
+            <Typography variant="body2">
               Informasi perusahaan akan ditampilkan dalam proposal dan invoice
             </Typography>
           </CardContent>

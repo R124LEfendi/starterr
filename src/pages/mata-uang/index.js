@@ -21,7 +21,7 @@ function Currency() {
 
         <CardActionArea>
           <CardContent>
-            <Typography gutterBottom variant="h5" color="black" component="div">
+            <Typography gutterBottom variant="h5" component="div">
               Mata uang
             </Typography>
           </CardContent>

@@ -26,7 +26,7 @@ function Receipt() {
             <Typography gutterBottom variant="h5" component="div">
               Pengaturan Receipt
             </Typography>
-            <Typography variant="body2" color="black">
+            <Typography variant="body2">
               Kostumisasi Receipt
             </Typography>
           </CardContent>

@@ -22,7 +22,7 @@ function TahunBuku() {
 
         <CardActionArea>
           <CardContent>
-            <Typography gutterBottom variant="h5" color="black" component="div">
+            <Typography gutterBottom variant="h5" component="div">
               Tahun buku
             </Typography>
           </CardContent>

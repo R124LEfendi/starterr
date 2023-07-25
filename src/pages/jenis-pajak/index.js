@@ -66,9 +66,9 @@ const JenisPajak = () => {
 
   return (
     <Container>
-      <h1>CRUD Input Modal with Material-UI</h1>
+      <h1>Jenis Pajak</h1>
       <Button variant="contained" color="primary" onClick={() => openCrudModal('add', null)}>
-        Add Item
+        Tambah
       </Button>
       <Modal open={isCrudModalOpen} onClose={closeCrudModal}>
         <Box
@@ -88,7 +88,7 @@ const JenisPajak = () => {
           </Typography>
           <TextField
             fullWidth
-            label="ID"
+            label="Pajak"
             name="id"
             value={inputData.id}
             onChange={handleItemNameChange}
@@ -97,7 +97,7 @@ const JenisPajak = () => {
           />
           <TextField
             fullWidth
-            label="Name"
+            label="Deskripsi"
             name="name"
             value={inputData.name}
             onChange={handleItemNameChange}
@@ -105,7 +105,7 @@ const JenisPajak = () => {
           />
           <TextField
             fullWidth
-            label="Description"
+            label="Persentase"
             name="description"
             value={inputData.description}
             onChange={handleItemNameChange}
@@ -117,15 +117,15 @@ const JenisPajak = () => {
             variant="contained"
             sx={{ mt: 2, mr: 2 }}
           >
-            {modalMode === 'add' ? 'Add' : 'Save'}
+            {modalMode === 'add' ? 'Tambah' : 'Save'}
           </Button>
           {modalMode === 'edit' && (
             <Button onClick={() => handleDeleteItem(editItemId)} color="error" variant="contained" sx={{ mt: 2 }}>
-              Delete
+              Hapus
             </Button>
           )}
           <Button onClick={closeCrudModal} variant="outlined" sx={{ mt: 2 }}>
-            Cancel
+            Batal
           </Button>
         </Box>
       </Modal>
@@ -133,10 +133,10 @@ const JenisPajak = () => {
         <Table>
           <TableHead>
             <TableRow>
-              <TableCell>ID</TableCell>
-              <TableCell>Name</TableCell>
-              <TableCell>Description</TableCell>
-              <TableCell>Action</TableCell>
+              <TableCell>Pajak</TableCell>
+              <TableCell>Deskripsi</TableCell>
+              <TableCell>Persentase</TableCell>
+              <TableCell>Aksi</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
@@ -148,7 +148,7 @@ const JenisPajak = () => {
                 <TableCell>
                   <Button onClick={() => openCrudModal('edit', item)}>Edit</Button>
                   <Button onClick={() => handleDeleteItem(item.id)} color="error">
-                    Delete
+                    Hapus
                   </Button>
                 </TableCell>
               </TableRow>

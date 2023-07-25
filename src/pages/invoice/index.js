@@ -26,10 +26,10 @@ function Invoice() {
 
         <CardActionArea>
           <CardContent>
-            <Typography gutterBottom variant="h5" color="black" component="div">
+            <Typography gutterBottom variant="h5" component="div">
               Pengaturan invoice
             </Typography>
-            <Typography variant="body2" color="black">
+            <Typography variant="body2">
               Kostumisasi invoice
             </Typography>
           </CardContent>

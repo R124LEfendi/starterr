@@ -20,14 +20,9 @@ const navigation = () => [
     icon: 'tabler:building-bank',
   },
   {
-    title: 'Second Page',
-    path: '/second-page',
+    title: 'Template',
+    path: '/template',
     icon: 'tabler:mail',
-  },
-  {
-    title: 'Invoice',
-    path: '/invoice',
-    icon: 'tabler:receipt-2',
   },
   {
     title: 'Proposal',
@@ -35,12 +30,20 @@ const navigation = () => [
     icon: 'tabler:feedback',
   },
   {
-    path: '/acl',
-    action: 'read',
-    subject: 'acl-page',
-    title: 'Access Control',
-    icon: 'tabler:shield',
-  }
+    title: 'Invoice',
+    path: '/invoice',
+    icon: 'tabler:receipt-2',
+  },
+  {
+    title: 'Receipt',
+    path: '/receipt',
+    icon: 'tabler:file-description',
+  },
+  {
+    title: 'Jenis pajak',
+    path: '/jenis-pajak',
+    icon: 'tabler:receipt-2',
+  },
 ]
 
 export default navigation

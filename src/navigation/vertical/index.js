@@ -21,9 +21,14 @@ const navigation = () => {
       icon: 'tabler:building-bank',
     },
     {
-      title: 'Second Page',
-      path: '/second-page',
+      title: 'Template',
+      path: '/template',
       icon: 'tabler:mail',
+    },
+    {
+      title: 'Proposal',
+      path: '/proposal',
+      icon: 'tabler:file-description',
     },
     {
       title: 'Invoice',
@@ -31,17 +36,16 @@ const navigation = () => {
       icon: 'tabler:receipt-2',
     },
     {
-      title: 'Proposal',
-      path: '/proposal',
-      icon: 'tabler:mail',
+      title: 'Receipt',
+      path: '/receipt',
+      icon: 'tabler:file-description',
     },
+
     {
-      path: '/acl',
-      action: 'read',
-      subject: 'acl-page',
-      title: 'Access Control',
-      icon: 'tabler:shield',
-    }
+      title: 'Jenis pajak',
+      path: '/jenis-pajak',
+      icon: 'tabler:receipt-2',
+    },
   ]
 }
 

@@ -6,9 +6,9 @@ import { Box } from '@mui/material';
 import TextField from '@mui/material/TextField';
 
 
-function Template() {
+function EmailReceipt() {
 
-  const defaultValue = "Hi @pelanggan,\n\nTerlampir adalah Invoice dengan nomor @nomor tanggal @tanggal.\n\nNilai outstanding invoice kamu adalah sebesar @tersisa\n\nSalam\n@perusahaan";
+  const defaultValue = "Hi @pelanggan,\n\nKami mengucapkan terima kasih karena telah mempercayakan @perusahaan. Terlampir adalah Tanda Terima dengan nomor @nomor tanggal @tanggalbayar.\n\nSalam\n@perusahaan";
 
   return (
     <CardActions>
@@ -42,7 +42,7 @@ function Template() {
                   Template by default. Kamu bisa mengubah template email invoice
                 </Typography>
                 <Typography ml={3}>
-                  Variabel : <button color="succes" disabled>@tanggal</button> <button disabled>@perusahaan</button> <button disabled>@pelanggan</button> <button disabled>@nomor</button> <button disabled>@total</button> <button disabled>@tersisa</button> <button disabled>@jatuh tempo</button>
+                  Variabel : <button disabled>@pelanggan</button> <button disabled>@tanggal bayar</button> <button disabled>@metode pembayaran</button> <button disabled>@total</button> <button disabled>@link</button> <button disabled>@perusahaan</button> <button disabled>@tersisa</button> <button disabled>@nomor</button>
                 </Typography>
               </Box>
             </Grid>
@@ -53,4 +53,4 @@ function Template() {
   )
 }
 
-export default Template
+export default EmailReceipt

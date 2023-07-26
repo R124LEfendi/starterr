@@ -1,66 +1,50 @@
-// ** React Imports
-import { useState } from 'react'
+import * as React from 'react';
+import { styled } from '@mui/material/styles';
+import Box from '@mui/material/Box';
+import Paper from '@mui/material/Paper';
+import Grid from '@mui/material/Grid';
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
+import CardMedia from '@mui/material/CardMedia';
+import Typography from '@mui/material/Typography';
+import { CardActionArea } from '@mui/material';
 
-// ** MUI Imports
-import Grid from '@mui/material/Grid'
-
-// ** Third Party Components
-import axios from 'axios'
-
-// ** Demo Components Imports
-import AddCard from 'src/views/apps/invoice/add/AddCard'
-import AddActions from 'src/views/apps/invoice/add/AddActions'
-import AddNewCustomers from 'src/views/apps/invoice/add/AddNewCustomer'
-
-// ** Styled Component
-import DatePickerWrapper from 'src/@core/styles/libs/react-datepicker'
-
-const InvoiceAdd = ({ apiClientData, invoiceNumber }) => {
-  // ** State
-  const [addCustomerOpen, setAddCustomerOpen] = useState(false)
-  const [selectedClient, setSelectedClient] = useState(null)
-  const [clients, setClients] = useState(apiClientData)
-  const toggleAddCustomerDrawer = () => setAddCustomerOpen(!addCustomerOpen)
-
+function InvoiceAdd() {
   return (
-    <DatePickerWrapper sx={{ '& .react-datepicker-wrapper': { width: 'auto' } }}>
-      <Grid container spacing={6}>
-        <Grid item xl={9} md={8} xs={12}>
-          <AddCard
-            clients={clients}
-            invoiceNumber={invoiceNumber}
-            selectedClient={selectedClient}
-            setSelectedClient={setSelectedClient}
-            toggleAddCustomerDrawer={toggleAddCustomerDrawer}
-          />
+
+    <Box sx={{ flexGrow: 1 }}>
+      <Grid container spacing={2} columns={16}>
+        <Grid item xs={12}>
+          <Box>
+            <Card sx={{ maxWidth: 345 }}>
+              <CardActionArea>
+                <CardMedia
+                  component="img"
+                  height="140"
+                  image="/static/images/cards/contemplative-reptile.jpg"
+                  alt="green iguana"
+                />
+                <CardContent>
+                  <Typography gutterBottom variant="h5" component="div">
+                    Lizard
+                  </Typography>
+                  <Typography variant="body2" color="text.secondary">
+                    Lizards are a widespread group of squamate reptiles, with over 6,000
+                    species, ranging across all continents except Antarctica
+                  </Typography>
+                </CardContent>
+              </CardActionArea>
+            </Card>
+          </Box>
         </Grid>
-        <Grid item xl={3} md={4} xs={12}>
-          <AddActions />
+        <Grid item xs={8}>
+
         </Grid>
       </Grid>
-      <AddNewCustomers
-        clients={clients}
-        open={addCustomerOpen}
-        setClients={setClients}
-        toggle={toggleAddCustomerDrawer}
-        setSelectedClient={setSelectedClient}
-      />
-    </DatePickerWrapper>
-  )
-}
+    </Box>
 
-export const getStaticProps = async () => {
-  const clientResponse = await axios.get('/apps/invoice/clients')
-  const apiClientData = clientResponse.data
-  const allInvoicesResponse = await axios.get('/apps/invoice/invoices', { params: { q: '', status: '' } })
-  const lastInvoiceNumber = Math.max(...allInvoicesResponse.data.allData.map(i => i.id))
 
-  return {
-    props: {
-      apiClientData,
-      invoiceNumber: lastInvoiceNumber + 1
-    }
-  }
+  );
 }
 
 export default InvoiceAdd

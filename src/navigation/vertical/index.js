@@ -29,20 +29,8 @@ const navigation = () => {
       icon: 'tabler:file-dollar',
       children: [
         {
-          title: 'List',
-          path: '/apps/invoice/list'
-        },
-        {
-          title: 'Preview',
-          path: '/apps/invoice/preview'
-        },
-        {
-          title: 'Edit',
-          path: '/apps/invoice/edit'
-        },
-        {
-          title: 'Add',
-          path: '/apps/invoice/add'
+          title: 'Add Invoice',
+          path: '/invoice/add',
         }
       ]
     },

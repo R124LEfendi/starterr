@@ -31,7 +31,11 @@ const navigation = () => {
         {
           title: 'Add Invoice',
           path: '/invoice/add',
-        }
+        },
+        {
+          title: 'Edit Invoice',
+          path: '/invoice/edit',
+        },
       ]
     },
     {

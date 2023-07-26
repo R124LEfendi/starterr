@@ -8,25 +8,36 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
+import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
+import { DatePicker } from '@mui/x-date-pickers/DatePicker';
+import Item from '@mui/material/ListItem';
+import { Add } from '@mui/icons-material';
+import AddCalendar from './AddCalendar';
 
 function InvoiceAdd() {
   return (
 
-    <Box sx={{ flexGrow: 1 }}>
+    <Box sx={{ flexGrow: 1, m: 1, }}>
       <Grid container spacing={2} columns={16}>
+
         <Grid item xs={12}>
+
           <Box>
-            <Card sx={{ maxWidth: 345 }}>
+            <AddCalendar />
+          </Box>
+          <Box sx={{ mt: 1 }} >
+            <Card fullWidth>
               <CardActionArea>
                 <CardMedia
                   component="img"
-                  height="140"
+
                   image="/static/images/cards/contemplative-reptile.jpg"
                   alt="green iguana"
                 />
                 <CardContent>
                   <Typography gutterBottom variant="h5" component="div">
-                    Lizard
+                    ayam
                   </Typography>
                   <Typography variant="body2" color="text.secondary">
                     Lizards are a widespread group of squamate reptiles, with over 6,000
@@ -35,16 +46,61 @@ function InvoiceAdd() {
                 </CardContent>
               </CardActionArea>
             </Card>
+
           </Box>
-        </Grid>
-        <Grid item xs={8}>
 
         </Grid>
+
+        <Grid item xs={4}>
+          <Card sx={{ maxWidth: 250 }}>
+            <CardActionArea>
+              <CardMedia
+                component="img"
+                height="140"
+                image="/static/images/cards/contemplative-reptile.jpg"
+                alt="green iguana"
+              />
+              <CardContent>
+                <Typography gutterBottom variant="h5" component="div">
+                  sapi
+                </Typography>
+                <Typography variant="body2" color="text.secondary">
+                  Lizards are a widespread group of squamate reptiles, with over 6,000
+                  species, ranging across all continents except Antarctica
+                </Typography>
+              </CardContent>
+            </CardActionArea>
+          </Card>
+        </Grid>
+
       </Grid>
-    </Box>
+
+      <Card sx={{ maxWidth: 345 }}>
+        <CardActionArea>
+          <CardMedia
+            component="img"
+            height="140"
+            image="/static/images/cards/contemplative-reptile.jpg"
+            alt="green iguana"
+          />
+          <CardContent>
+            <Typography gutterBottom variant="h5" component="div">
+              jerapah
+            </Typography>
+            <Typography variant="body2" color="text.secondary">
+              Lizards are a widespread group of squamate reptiles, with over 6,000
+              species, ranging across all continents except Antarctica
+            </Typography>
+          </CardContent>
+        </CardActionArea>
+      </Card>
+
+    </Box >
 
 
   );
 }
 
 export default InvoiceAdd
+
+

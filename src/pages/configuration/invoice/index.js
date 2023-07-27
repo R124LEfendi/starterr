@@ -35,22 +35,21 @@ function Invoice() {
           </CardContent>
         </CardActionArea>
 
-        {/* format nomor */}
+
         <Format />
 
-        {/* Template email */}
+
 
         <Template />
 
-        {/* Jatuh tempo */}
+
 
         <Jatuh />
 
-        {/* Pengingat */}
+
 
         <Pengingat />
 
-        {/* Template pengingat */}
 
         <TemplatePengingat />
 

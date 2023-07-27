@@ -1,77 +1,81 @@
 import React from 'react'
-import { styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
-import { CardActionArea } from '@mui/material';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
-import Item from '@mui/material/ListItem';
+import TextField from '@mui/material/TextField';
 
 function AddCalendar() {
   return (
-    <Card fullwidth>
-      <CardActionArea>
+    <>
+      <Box
+        sx={{
+          display: 'flex',
+          flexWrap: 'wrap',
+          '& > :not(style)': {
 
-        <CardContent>
+            width: '100%',
+          },
+        }}>
+        <Paper elevation={3} >
+          <Grid container spacing={2} columns={16} m={5}>
 
-          <Grid container spacing={2} columns={16}>
-
-            <Grid item xs={8}>
+            <Grid container xl={6} md={6} xs={12} >
               <Typography gutterBottom variant="h1" component="div">
                 Invoice
+                <br />
+                <Typography gutterBottom variant="h5" component="div">
+                  Tambah Invoice
+                </Typography>
               </Typography>
+
             </Grid>
 
-            <Grid item xs={8}>
 
-              <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
-                <Grid item xs={6}>
-                  <Typography gutterBottom variant="h3" component="div">
-                    Invoice
-                  </Typography>
-                </Grid>
-                <Grid item xs={6}>
-                  <LocalizationProvider dateAdapter={AdapterDayjs}>
-                    <DatePicker />
-                  </LocalizationProvider>
-                </Grid>
-                <Grid item xs={6}>
-                  <Typography gutterBottom variant="h5" component="div">
-                    zjxcbkjbkbk
-                  </Typography>
-                </Grid>
-                <Grid item xs={6}>
-                  <LocalizationProvider dateAdapter={AdapterDayjs}>
-                    <DatePicker />
-                  </LocalizationProvider>
-                </Grid>
-                <Grid item xs={6}>
-                  <Typography gutterBottom variant="h5" component="div">
-                    zjxcbkjbkbk
-                  </Typography>
-                </Grid>
-                <Grid item xs={6}>
-                  <LocalizationProvider dateAdapter={AdapterDayjs}>
-                    <DatePicker />
-                  </LocalizationProvider>
-                </Grid>
+
+            <Grid container xl={5} md={10} xs={12} spacing={2} >
+              <Grid item xl={6} md={8} xs={12} >
+                <Typography gutterBottom variant="h5" component="div">
+                  Invoice
+                </Typography>
               </Grid>
 
-
+              <Grid item xl={6} md={8} xs={12} >
+                <TextField id="filled-basic" variant="filled" />
+              </Grid>
+              <Grid item xl={6} md={8} xs={12}>
+                <Typography gutterBottom variant="h5" component="div">
+                  Dari Tanggal  :
+                </Typography>
+              </Grid>
+              <Grid item xl={6} md={8} xs={12}>
+                <LocalizationProvider dateAdapter={AdapterDayjs}>
+                  <DatePicker />
+                </LocalizationProvider>
+              </Grid>
+              <Grid item xl={6} md={8} xs={12}>
+                <Typography gutterBottom variant="h5" component="div">
+                  Sampai Tanggal  :
+                </Typography>
+              </Grid>
+              <Grid item xl={6} md={8} xs={12}>
+                <LocalizationProvider dateAdapter={AdapterDayjs}>
+                  <DatePicker />
+                </LocalizationProvider>
+              </Grid>
             </Grid>
 
+
+
+
           </Grid>
+        </Paper >
+      </Box>
 
-        </CardContent>
-      </CardActionArea>
-
-    </Card>
+    </>
   )
 }
 

@@ -3,10 +3,10 @@ import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import AddCalendar from '../add/AddCalendar';
 import InvoiceTo from '../add/InvoiceTo';
-import ButtonInvoice from '../add/ButtonInvoice';
 import SaveInvoice from '../add/SaveInvoice';
 import InvoiceList from '../add/InvoiceList';
 import EditInvoiceButton from './editInvoiceButton';
+import Tempo from '../add/Tempo';
 
 function InvoiceEdit() {
   return (
@@ -27,6 +27,7 @@ function InvoiceEdit() {
 
         <Grid item xl={3} md={8} xs={12}>
           <SaveInvoice />
+          <Tempo />
         </Grid>
 
       </Grid>

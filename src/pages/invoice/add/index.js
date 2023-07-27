@@ -6,6 +6,7 @@ import InvoiceTo from './InvoiceTo';
 import ButtonInvoice from './ButtonInvoice';
 import SaveInvoice from './SaveInvoice';
 import InvoiceList from './InvoiceList';
+import Tempo from './Tempo';
 
 function InvoiceAdd() {
   return (
@@ -26,6 +27,7 @@ function InvoiceAdd() {
 
         <Grid item xl={3} md={8} xs={12}>
           <SaveInvoice />
+          <Tempo />
         </Grid>
 
       </Grid>

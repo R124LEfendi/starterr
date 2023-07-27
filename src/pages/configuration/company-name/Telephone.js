@@ -26,7 +26,7 @@ function Telephone() {
                 noValidate
                 autoComplete="off"
               >
-                <TextField label="Nomor Telephone" Required id="Telephone" defaultValue="+62" />
+                <TextField label="Nomor Telephone" fullWidth Required id="Telephone" defaultValue="+62" />
 
               </Box>
             </Grid>

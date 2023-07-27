@@ -26,7 +26,7 @@ function Npwp() {
                 noValidate
                 autoComplete="off"
               >
-                <TextField label="Nomor Pokok Wajib Pajak" id="fullWidth" />
+                <TextField label="Nomor Pokok Wajib Pajak" fullWidth id="fullWidth" />
 
               </Box>
             </Grid>

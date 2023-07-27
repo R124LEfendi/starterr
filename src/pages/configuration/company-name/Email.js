@@ -26,7 +26,7 @@ function Email() {
                 noValidate
                 autoComplete="off"
               >
-                <TextField label="Email" Required id="Email" />
+                <TextField label="Email" fullWidth Required id="Email" />
 
               </Box>
             </Grid>

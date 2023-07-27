@@ -26,7 +26,7 @@ function Pos() {
                 noValidate
                 autoComplete="off"
               >
-                <TextField label="Pos" id="fullWidth" />
+                <TextField label="Pos" fullWidth id="fullWidth" />
 
               </Box>
             </Grid>

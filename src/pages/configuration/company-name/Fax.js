@@ -26,7 +26,7 @@ function Fax() {
                 noValidate
                 autoComplete="off"
               >
-                <TextField label="Fax" Required id="Telephone" defaultValue="+62" />
+                <TextField label="Fax" fullWidth Required id="Telephone" defaultValue="+62" />
 
               </Box>
             </Grid>

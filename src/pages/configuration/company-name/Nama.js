@@ -26,7 +26,7 @@ function Nama() {
                 noValidate
                 autoComplete="off"
               >
-                <TextField label="Nama" Required id="Nama" />
+                <TextField label="Nama" fullWidth Required id="Nama" />
 
               </Box>
             </Grid>

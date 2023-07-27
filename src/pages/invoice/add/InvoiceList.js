@@ -31,7 +31,7 @@ function InvoiceList() {
       >
 
 
-        <Paper elevation={3} sx={tableContainer}>
+        <Paper sx={tableContainer}>
           <div >
             <table >
               <tr style={tableHead}>

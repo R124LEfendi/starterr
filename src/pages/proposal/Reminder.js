@@ -25,22 +25,22 @@ function Reminder() {
         }}>
         <Paper elevation={3} sx={{ padding: "40px", display: "flex", alignItems: "center", justify: "center" }} >
           <div >
-            <FormControlLabel control={<Checkbox />} label="Pada saat jatuh tempo" />
+            <FormControlLabel control={<Checkbox defaultChecked />} label="Pada saat jatuh tempo" />
             <FormControlLabel control={<Checkbox />} label="14 hari setelah jatuh tempo" />
 
 
           </div>
           <div >
 
-            <FormControlLabel control={<Checkbox />} label="1 hari setelah jatuh tempo" />
+            <FormControlLabel control={<Checkbox defaultChecked />} label="1 hari setelah jatuh tempo" />
             <FormControlLabel control={<Checkbox />} label="30 hari setelah jatuh tempo" />
           </div>
           <div>
-            <FormControlLabel control={<Checkbox />} label="3 hari setelah jatuh tempo" />
+            <FormControlLabel control={<Checkbox defaultChecked />} label="3 hari setelah jatuh tempo" />
             <FormControlLabel control={<Checkbox />} label="60 hari setelah jatuh tempo" />
           </div>
           <div>
-            <FormControlLabel control={<Checkbox />} label="7 hari setelah jatuh tempo" />
+            <FormControlLabel control={<Checkbox defaultChecked />} label="7 hari setelah jatuh tempo" />
             <FormControlLabel control={<Checkbox />} label="90 hari setelah jatuh tempo" />
           </div>
 

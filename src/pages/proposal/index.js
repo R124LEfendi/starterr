@@ -6,6 +6,7 @@ import ProposalTo from './ProposalTo';
 import ButtonProposal from './ButtonProposal';
 import ProposalList from './ProposalList';
 import Reminder from './Reminder';
+import MinHeightTextarea from './TextProposal';
 
 function Proposal() {
   return (
@@ -24,6 +25,7 @@ function Proposal() {
 
           <ProposalList />
 
+          <MinHeightTextarea />
         </Grid>
 
 

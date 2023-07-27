@@ -1,7 +1,7 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
-import AddCalendar from './AddCalendar';
+import InvoiceCalendar from './InvoceCalendar';
 import InvoiceTo from './InvoiceTo';
 import ButtonInvoice from './ButtonInvoice';
 import SaveInvoice from './SaveInvoice';
@@ -15,7 +15,7 @@ function InvoiceAdd() {
       <Grid container spacing={6}>
         <Grid item spacing={3} xl={9} md={8} xs={12}>
 
-          <AddCalendar />
+          <InvoiceCalendar />
 
           <InvoiceTo />
 

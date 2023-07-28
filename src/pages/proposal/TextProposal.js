@@ -1,9 +1,13 @@
 import * as React from 'react';
 import TextareaAutosize from '@mui/base/TextareaAutosize';
 import { styled } from '@mui/system';
+import Paper from '@mui/material/Paper';
+import { Typography } from '@mui/material';
+import Box from '@mui/material/Box';
+import Grid from '@mui/material/Grid';
 
 export default function MinHeightTextarea() {
-  const [value, setValue] = React.useState('Mohon dilakukan pembayaran ke rekening:\n\n@namabank1\n@cabangbank1\n@norekening1\n@namarekening1\n==========================================\n@namabank2\n@cabangbank2\n@norekening2\n@namarekening2\n=========================================\n@namabank3\n@cabangbank3\n@norekening3\n@namarekening3\n=========================================\n@namabank4\n@cabangbank4\n@norekening4\n@namarekening4\n=========================================\n@namabank5\n@cabangbank\n@norekening5\n@namarekening5');
+  const [value, setValue] = React.useState('Mohon dilakukan pembayaran ke rekening:\n\n@namabank1\n@cabangbank1\n@norekening1\n@namarekening1\n==========================================\n@namabank2\n@cabangbank2\n@norekening2\n@namarekening2\n=========================================\n@namabank3\n@cabangbank3\n@norekening3\n@namarekening3\n=========================================\n@namabank4\n@cabangbank4\n@norekening4\n@namarekening4\n=========================================\n@namabank5\n@cabangbank5\n@norekening5\n@namarekening5');
 
   const blue = {
     100: '#DAECFF',
@@ -29,12 +33,14 @@ export default function MinHeightTextarea() {
 
   const StyledTextarea = styled(TextareaAutosize)(
     ({ theme }) => `
-    width: 50%;
+    width: 100%;
+    min-height: 550px;
     font-family: IBM Plex Sans, sans-serif;
     font-size: 0.875rem;
     font-weight: 400;
     line-height: 1.5;
-    padding: 12px;
+    padding: 10px;
+    margin: 10px;
     border-radius: 12px 12px 0 12px;
     color: ${theme.palette.mode === 'dark' ? grey[300] : grey[900]};
     background: ${theme.palette.mode === 'dark' ? grey[900] : '#fff'};
@@ -57,11 +63,47 @@ export default function MinHeightTextarea() {
   `,
   );
 
-  return (
-    <StyledTextarea
-      aria-label="empty textarea"
+  const divStyle = {
+    padding: '20px',
 
-      placeholder={value}
-    />
+
+
+  }
+
+  return (
+
+
+    <div style={divStyle}>
+
+      <Grid container spacing={2} columns={16} sx={{ justifyContent: "space-around" }}>
+        <Grid item xs={12} xl={7}>
+
+          <Typography variant="h5" component="div" sx={{ flexGrow: 5 }} >
+            Informasi Rekening <span style={{ color: 'red' }}>*</span>
+          </Typography>
+          <StyledTextarea
+            aria-label="empty textarea"
+            m="100"
+            placeholder={value}
+          />
+        </Grid>
+        <Grid item xs={12} xl={7}>
+
+
+          <Typography variant="h5" component="div" sx={{ flexGrow: 1 }} >
+            Informasi Rekening <span style={{ color: 'red' }}>*</span>
+          </Typography>
+          <StyledTextarea aria-label="empty textarea" placeholder="Empty" />
+
+        </Grid>
+      </Grid>
+
+
+
+
+
+    </div>
+
+
   );
 }

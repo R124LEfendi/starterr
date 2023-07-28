@@ -7,15 +7,17 @@ import TableCell from '@mui/material/TableCell';
 import { calculateSubtotal, calculateTotal } from './total';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
+import Button from '@mui/material/Button';
 
 const CrudData = ({ data, onDelete }) => {
 
   const tableContainer = {
-
+    padding: "6px",
     justifyContent: 'center',
     alignItems: 'center',
     width: '100%',
     borderCollapse: "collapse",
+
   };
 
   const tableHead = {
@@ -26,8 +28,9 @@ const CrudData = ({ data, onDelete }) => {
 
   const tableCell = {
     padding: '20px',
-    border: "1px solid black",
-    borderCollapse: "collapse",
+    border: "1px black",
+
+    borderRound: "10px",
   }
 
   return (
@@ -37,8 +40,8 @@ const CrudData = ({ data, onDelete }) => {
       <Box
       >
 
+        <div style={tableContainer} >
 
-        <Paper sx={tableContainer}>
 
           {/* <table style={tableContainer}>
             <thead style={tableHead}>
@@ -70,7 +73,7 @@ const CrudData = ({ data, onDelete }) => {
             <Table sx={{ minWidth: 700 }} aria-label="spanning table">
               <TableHead>
 
-                <TableRow>
+                <TableRow style={tableCell}>
                   <TableCell align="right">Item</TableCell>
                   <TableCell align="right">Jumlah</TableCell>
                   <TableCell align="right">Harga</TableCell>
@@ -84,16 +87,16 @@ const CrudData = ({ data, onDelete }) => {
 
               <TableBody>
                 {data.map((item, index) => (
-                  <TableRow key={index} >
+                  <TableRow key={index} style={tableCell} >
 
-                    <TableCell align="right">{item.item}</TableCell>
-                    <TableCell align="right">{item.totalItem}</TableCell>
-                    <TableCell align="right">{item.price}</TableCell>
-                    <TableCell align="right">{calculateSubtotal(item)}</TableCell>
-                    <TableCell align="right">{item.tax}</TableCell>
-                    <TableCell align="right">{item.discount}</TableCell>
-                    <TableCell align="right">{calculateTotal(item)}</TableCell>
-                    <TableCell align="right"><button onClick={() => onDelete(index)}>Delete</button></TableCell>
+                    <TableCell style={tableCell} align="right">{item.item}</TableCell>
+                    <TableCell style={tableCell} align="right">{item.totalItem}</TableCell>
+                    <TableCell style={tableCell} align="right">{item.price}</TableCell>
+                    <TableCell style={tableCell} align="right">{calculateSubtotal(item)}</TableCell>
+                    <TableCell style={tableCell} align="right">{item.tax}</TableCell>
+                    <TableCell style={tableCell} align="right">{item.discount}</TableCell>
+                    <TableCell style={tableCell} align="right">{calculateTotal(item)}</TableCell>
+                    <TableCell style={tableCell} align="right"><Button color="error" onClick={() => onDelete(index)}>Delete</Button></TableCell>
                     {/*
                     <TableCell></TableCell>
                     <TableCell align="right">Pajak</TableCell>
@@ -125,8 +128,7 @@ const CrudData = ({ data, onDelete }) => {
             </Table>
           </TableContainer>
 
-
-        </Paper>
+        </div>
       </Box>
     </>
   );

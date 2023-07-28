@@ -10,34 +10,36 @@ import ProposalList from './ProposalList'
 import Reminder from './Reminder'
 import MinHeightTextarea from '../TextProposal'
 import Crud from './Crud'
+import Paper from '@mui/material/Paper'
 
 function EditProposal() {
   return (
     <Box sx={{ flexGrow: 1, m: 1 }}>
+      <Paper>
 
-      <Grid container spacing={6}>
-        <Grid item spacing={3} xl={12} md={12} xs={12}>
+        <Grid container spacing={6}>
+          <Grid item spacing={3} xl={12} md={12} xs={12}>
 
-          <AddCalendar />
+            <AddCalendar />
 
-          <ProposalTo />
+            <ProposalTo />
 
-          <Reminder />
-          {/*
+            <Reminder />
+            {/*
           <AddButtonProposal /> */}
-          <Crud />
+            <Crud />
 
-          {/* <ProposalList /> */}
+            {/* <ProposalList /> */}
 
 
 
-          <MinHeightTextarea />
+            <MinHeightTextarea />
+          </Grid>
+
+
+
         </Grid>
-
-
-
-      </Grid>
-
+      </Paper>
 
     </Box>
   )

@@ -23,7 +23,7 @@ function Reminder() {
             width: '100%',
           },
         }}>
-        <Paper elevation={3} sx={{ padding: "40px", display: "flex", alignItems: "center", justify: "center" }} >
+        <div style={{ padding: "40px", display: "flex", alignItems: "center", justify: "center" }}>
           <div >
             <FormControlLabel control={<Checkbox defaultChecked />} label="Pada saat jatuh tempo" />
             <FormControlLabel control={<Checkbox />} label="14 hari setelah jatuh tempo" />
@@ -45,7 +45,7 @@ function Reminder() {
           </div>
 
 
-        </Paper >
+        </div>
       </Box>
     </>
 

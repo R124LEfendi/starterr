@@ -42,6 +42,7 @@ const Crud = () => {
     alignItems: 'center',
     width: '100%',
     borderCollapse: "collapse",
+    borderRadius: "10px",
 
   };
 
@@ -56,39 +57,39 @@ const Crud = () => {
             width: '100%',
           },
         }}>
-        <Paper elevation={3} sx={{ minHeight: "500px" }}>
-          <div >
-            <h1>CRUD Table</h1>
-            <form onSubmit={handleSubmit}  >
-              <div style={{ justifyContent: "space-between", display: "flex", }}>
-                <table style={tableContainer}>
-                  <tr style={{ border: " 1px solid black", justifyContent: "center" }} >
-                    <td style={{ border: " 1px solid black", justifyContent: "center" }}>
-                      <TextField type="text" value={item} onChange={(e) => setItem(e.target.value)} placeholder="Item" />
-                      <IconButton type="button" sx={{ p: '10px' }} aria-label="search">
-                        <SearchIcon />
-                      </IconButton></td>
-                    <td style={{ border: " 1px solid black", justifyContent: "center" }}><TextField type="number" value={totalItem} onChange={(e) => setTotalItem(e.target.value)} placeholder="Jumlah" /></td>
-                    <td style={{ border: " 1px solid black", justifyContent: "center" }}><TextField type="number" value={price} onChange={(e) => setPrice(e.target.value)} placeholder="Harga" /></td>
-                    <td style={{ border: " 1px solid black", justifyContent: "center" }}><TextField type="number" value={tax} onChange={(e) => setTax(e.target.value)} placeholder="Pajak %" /></td>
-                    <td style={{ border: " 1px solid black", justifyContent: "center" }}><TextField type="number" value={discount} onChange={(e) => setDiscount(e.target.value)} placeholder="Diskon %" /></td>
-                  </tr>
-                </table>
-              </div>
+
+        <div style={{ minHeight: "500px" }} >
+
+          <form onSubmit={handleSubmit}  >
+            <div style={{ justifyContent: "space-between", display: "flex", }}>
+              <table style={tableContainer}>
+                <tr style={{ justifyContent: "center" }} >
+                  <td style={{ justifyContent: "center" }}>
+                    <TextField type="text" value={item} onChange={(e) => setItem(e.target.value)} placeholder="Item" />
+                    <IconButton type="button" sx={{ p: '10px' }} aria-label="search">
+                      <SearchIcon />
+                    </IconButton></td>
+                  <td style={{ justifyContent: "center" }}><TextField type="number" value={totalItem} onChange={(e) => setTotalItem(e.target.value)} placeholder="Jumlah" /></td>
+                  <td style={{ justifyContent: "center" }}><TextField type="number" value={price} onChange={(e) => setPrice(e.target.value)} placeholder="Harga" /></td>
+                  <td style={{ justifyContent: "center" }}><TextField type="number" value={tax} onChange={(e) => setTax(e.target.value)} placeholder="Pajak %" /></td>
+                  <td style={{ justifyContent: "center" }}><TextField type="number" value={discount} onChange={(e) => setDiscount(e.target.value)} placeholder="Diskon %" /></td>
+                </tr>
+              </table>
+            </div>
 
 
 
 
-              <div style={{ justifyContent: "end", height: "150px", alignItems: "center", display: "flex" }}><Button type="submit" color="primary">Tambah</Button></div>
+            <div style={{ justifyContent: "end", height: "150px", alignItems: "center", display: "flex" }}><Button type="submit" color="primary">Tambah</Button></div>
 
-              <CrudData data={data} onDelete={handleDelete} />
+            <CrudData data={data} onDelete={handleDelete} />
 
 
 
-            </form>
+          </form>
 
-          </div>
-        </Paper >
+        </div>
+
       </Box >
     </>
   );

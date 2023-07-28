@@ -20,59 +20,59 @@ function AddCalendar() {
             width: '100%',
           },
         }}>
-        <Paper elevation={3} >
-          <Grid container spacing={2} columns={16} m={5}>
 
-            <Grid container xl={6} md={6} xs={12} >
-              <Typography gutterBottom variant="h1" component="div">
-                Proposal
-                <br />
-                <Typography gutterBottom variant="h5" component="div">
-                  Tambah Proposal
-                </Typography>
+        <Grid container spacing={2} columns={16} m={5}>
+
+          <Grid container xl={6} md={6} xs={12} >
+            <Typography gutterBottom variant="h1" component="div">
+              Proposal
+              <br />
+              <Typography gutterBottom variant="h5" component="div">
+                Tambah Proposal
               </Typography>
-
-            </Grid>
-
-
-
-            <Grid container xl={5} md={10} xs={12} spacing={2} >
-              <Grid item xl={6} md={8} xs={12} >
-                <Typography gutterBottom variant="h5" component="div">
-                  Proposal
-                </Typography>
-              </Grid>
-
-              <Grid item xl={6} md={8} xs={12} >
-                <TextField id="filled-basic" variant="filled" />
-              </Grid>
-              <Grid item xl={6} md={8} xs={12}>
-                <Typography gutterBottom variant="h5" component="div">
-                  Dari Tanggal  :
-                </Typography>
-              </Grid>
-              <Grid item xl={6} md={8} xs={12}>
-                <LocalizationProvider dateAdapter={AdapterDayjs}>
-                  <DatePicker />
-                </LocalizationProvider>
-              </Grid>
-              <Grid item xl={6} md={8} xs={12}>
-                <Typography gutterBottom variant="h5" component="div">
-                  Sampai Tanggal  :
-                </Typography>
-              </Grid>
-              <Grid item xl={6} md={8} xs={12}>
-                <LocalizationProvider dateAdapter={AdapterDayjs}>
-                  <DatePicker />
-                </LocalizationProvider>
-              </Grid>
-            </Grid>
-
-
-
+            </Typography>
 
           </Grid>
-        </Paper >
+
+
+
+          <Grid container xl={5} md={10} xs={12} spacing={2} >
+            <Grid item xl={6} md={8} xs={12} >
+              <Typography gutterBottom variant="h5" component="div">
+                Proposal
+              </Typography>
+            </Grid>
+
+            <Grid item xl={6} md={8} xs={12} >
+              <TextField id="filled-basic" variant="filled" />
+            </Grid>
+            <Grid item xl={6} md={8} xs={12}>
+              <Typography gutterBottom variant="h5" component="div">
+                Dari Tanggal  :
+              </Typography>
+            </Grid>
+            <Grid item xl={6} md={8} xs={12}>
+              <LocalizationProvider dateAdapter={AdapterDayjs}>
+                <DatePicker />
+              </LocalizationProvider>
+            </Grid>
+            <Grid item xl={6} md={8} xs={12}>
+              <Typography gutterBottom variant="h5" component="div">
+                Sampai Tanggal  :
+              </Typography>
+            </Grid>
+            <Grid item xl={6} md={8} xs={12}>
+              <LocalizationProvider dateAdapter={AdapterDayjs}>
+                <DatePicker />
+              </LocalizationProvider>
+            </Grid>
+          </Grid>
+
+
+
+
+        </Grid>
+
       </Box>
 
     </>

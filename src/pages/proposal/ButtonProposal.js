@@ -22,11 +22,11 @@ function ButtonInvoice() {
             width: '100%',
           },
         }}>
-        <Paper elevation={3} >
-          <div style={buttonInvoice}>
-            <Button href='/proposal/edit-proposal' variant="contained" color="primary" >Tambah</Button>
-          </div>
-        </Paper >
+
+        <div style={buttonInvoice}>
+          <Button href='/proposal/edit-proposal' variant="contained" color="primary" >Tambah</Button>
+        </div>
+
       </Box>
     </>
 

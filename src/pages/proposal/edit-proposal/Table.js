@@ -4,7 +4,7 @@ import { Box, TableContainer } from '@mui/material';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
-
+import { calculateSubtotal, calculateTotal } from './total';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 
@@ -40,7 +40,7 @@ const CrudData = ({ data, onDelete }) => {
 
         <Paper sx={tableContainer}>
 
-          <table style={tableContainer}>
+          {/* <table style={tableContainer}>
             <thead style={tableHead}>
               <tr>
                 <th style={tableCell}>Item</th>
@@ -65,7 +65,7 @@ const CrudData = ({ data, onDelete }) => {
                 </tr>
               ))}
             </tbody>
-          </table>
+          </table> */}
           <TableContainer component={Paper}>
             <Table sx={{ minWidth: 700 }} aria-label="spanning table">
               <TableHead>
@@ -74,39 +74,54 @@ const CrudData = ({ data, onDelete }) => {
                   <TableCell align="right">Item</TableCell>
                   <TableCell align="right">Jumlah</TableCell>
                   <TableCell align="right">Harga</TableCell>
-                  <TableCell align="right">Pajak</TableCell>
                   <TableCell align="right">Subtotal</TableCell>
+                  <TableCell align="right">Pajak</TableCell>
+                  <TableCell align="right">Total Diskon</TableCell>
+                  <TableCell align="right">Total Setelah Diskon</TableCell>
                   <TableCell align="right">Action</TableCell>
                 </TableRow>
               </TableHead>
+
               <TableBody>
+                {data.map((item, index) => (
+                  <TableRow key={index} >
 
-                <TableRow >
+                    <TableCell align="right">{item.item}</TableCell>
+                    <TableCell align="right">{item.totalItem}</TableCell>
+                    <TableCell align="right">{item.price}</TableCell>
+                    <TableCell align="right">{calculateSubtotal(item)}</TableCell>
+                    <TableCell align="right">{item.tax}</TableCell>
+                    <TableCell align="right">{item.discount}</TableCell>
+                    <TableCell align="right">{calculateTotal(item)}</TableCell>
+                    <TableCell align="right"><button onClick={() => onDelete(index)}>Delete</button></TableCell>
+                    {/*
+                    <TableCell></TableCell>
+                    <TableCell align="right">Pajak</TableCell>
+                    <TableCell align="right">{item.tax}</TableCell>
 
-                  <TableCell align="right">gg</TableCell>
-                  <TableCell align="right">dfgd</TableCell>
-                  <TableCell align="right">dfgd</TableCell>
-                  <TableCell align="right">gg</TableCell>
-                  <TableCell align="right">dfgd</TableCell>
-                  <TableCell align="right">dfgd</TableCell>
 
-                </TableRow>
+                    <TableCell >Diskon</TableCell>
+                    <TableCell align="right">{item.discount}</TableCell>
+
+                    <TableCell >Total</TableCell>
+                    <TableCell align="right">{calculateTotal(item)}</TableCell> */}
+                  </TableRow>
+
+
+                ))}
 
                 <TableRow>
-                  <TableCell rowSpan={3} />
-                  <TableCell colSpan={2}>Subtotal</TableCell>
-                  <TableCell align="right">dgdff</TableCell>
+
                 </TableRow>
                 <TableRow>
-                  <TableCell>Tax</TableCell>
-                  <TableCell align="right">fsdf</TableCell>
-                  <TableCell align="right">sdfsd</TableCell>
+
                 </TableRow>
                 <TableRow>
-                  <TableCell colSpan={2}>Total</TableCell>
-                  <TableCell align="right">fgddfd</TableCell>
+
                 </TableRow>
+
               </TableBody>
+
             </Table>
           </TableContainer>
 

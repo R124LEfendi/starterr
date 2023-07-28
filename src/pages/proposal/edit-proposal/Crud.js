@@ -6,25 +6,30 @@ import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import SearchIcon from '@mui/icons-material/Search';
 import CrudData from './Table';
+import calculateTotal from './total';
 
 
 
 const Crud = () => {
   const [data, setData] = useState([]);
   const [item, setItem] = useState('');
-  const [jumlah, setJumlah] = useState('');
-  const [harga, setHarga] = useState('');
-  const [pajak, setPajak] = useState('');
+  const [totalItem, setTotalItem] = useState('');
+  const [price, setPrice] = useState('');
+  const [tax, setTax] = useState('');
+  const [discount, setDiscount] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const subtotal = jumlah * harga * (1 + pajak / 100);
-    setData([...data, { item, jumlah, harga, pajak, subtotal }]);
+    const newItem = { item, totalItem, price, tax, discount };
+    setData([...data, newItem]);
     setItem('');
-    setJumlah('');
-    setHarga('');
-    setPajak('');
+    setTotalItem('');
+    setPrice('');
+    setTax('');
+    setDiscount('');
   };
+
+
 
   const handleDelete = (index) => {
     const newData = data.filter((_, idx) => idx !== index);
@@ -58,13 +63,15 @@ const Crud = () => {
               <div style={{ justifyContent: "space-between", display: "flex", }}>
                 <table style={tableContainer}>
                   <tr style={{ border: " 1px solid black", justifyContent: "center" }} >
-                    <td style={{ border: " 1px solid black", justifyContent: "center" }}>                  <TextField type="text" value={item} onChange={(e) => setItem(e.target.value)} placeholder="Item" />
+                    <td style={{ border: " 1px solid black", justifyContent: "center" }}>
+                      <TextField type="text" value={item} onChange={(e) => setItem(e.target.value)} placeholder="Item" />
                       <IconButton type="button" sx={{ p: '10px' }} aria-label="search">
                         <SearchIcon />
                       </IconButton></td>
-                    <td style={{ border: " 1px solid black", justifyContent: "center" }}><TextField type="number" value={jumlah} onChange={(e) => setJumlah(e.target.value)} placeholder="Jumlah" /></td>
-                    <td style={{ border: " 1px solid black", justifyContent: "center" }}><TextField type="number" value={harga} onChange={(e) => setHarga(e.target.value)} placeholder="Harga" /></td>
-                    <td style={{ border: " 1px solid black", justifyContent: "center" }}><TextField type="number" value={pajak} onChange={(e) => setPajak(e.target.value)} placeholder="Pajak" /></td>
+                    <td style={{ border: " 1px solid black", justifyContent: "center" }}><TextField type="number" value={totalItem} onChange={(e) => setTotalItem(e.target.value)} placeholder="Jumlah" /></td>
+                    <td style={{ border: " 1px solid black", justifyContent: "center" }}><TextField type="number" value={price} onChange={(e) => setPrice(e.target.value)} placeholder="Harga" /></td>
+                    <td style={{ border: " 1px solid black", justifyContent: "center" }}><TextField type="number" value={tax} onChange={(e) => setTax(e.target.value)} placeholder="Pajak %" /></td>
+                    <td style={{ border: " 1px solid black", justifyContent: "center" }}><TextField type="number" value={discount} onChange={(e) => setDiscount(e.target.value)} placeholder="Diskon %" /></td>
                   </tr>
                 </table>
               </div>

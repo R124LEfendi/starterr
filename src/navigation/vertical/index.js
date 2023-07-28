@@ -23,6 +23,13 @@ const navigation = () => {
       title: 'Proposal',
       path: '/proposal',
       icon: 'tabler:file-text',
+
+      // children: [
+      //   {
+      //     title: 'Edit Proposal',
+      //     path: '/proposal/EditProposal',
+      //   }
+      // ]
     },
     {
       title: 'Invoice',

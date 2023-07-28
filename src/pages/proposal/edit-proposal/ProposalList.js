@@ -33,17 +33,17 @@ function InvoiceList() {
 
 
         <Paper sx={tableContainer}>
-          <div >
-            <table >
+          <div  >
+            <table>
               <tr style={tableHead}>
-                <th style={tableCell}>Aksi</th>
-                <th style={tableCell}>Nomor</th>
-                <th style={tableCell}>Nama</th>
+                <th style={tableCell}>Item</th>
+                <th style={tableCell}>Jumlah</th>
+                <th style={tableCell}>Harga</th>
                 <th style={tableCell}>Tanggal</th>
-                <th style={tableCell}>Jatuh Tempo</th>
-                <th style={tableCell}>Total &#40;IDR&#41;</th>
-                <th style={tableCell}>Kurang Bayar</th>
-                <th style={tableCell}>Status</th>
+                <th style={tableCell}>Pajak</th>
+                <th style={tableCell}>SubTotal &#40;IDR&#41;</th>
+                <th style={tableCell}>Aksi</th>
+
               </tr>
               <tr>
                 <td style={tableCell}><button>@</button></td>
@@ -53,7 +53,7 @@ function InvoiceList() {
                 <td style={tableCell}>13/12/2020</td>
                 <td style={tableCell}>Rp.500.000,00</td>
                 <td style={tableCell}>0</td>
-                <td style={tableCell}>Sukses</td>
+
               </tr>
               <tr>
                 <td style={tableCell}><button>@</button></td>
@@ -63,7 +63,7 @@ function InvoiceList() {
                 <td style={tableCell}>Data 2</td>
                 <td style={tableCell}>Data 3</td>
                 <td style={tableCell}>Data 2</td>
-                <td style={tableCell}>Data 3</td>
+
               </tr>
             </table>
           </div>

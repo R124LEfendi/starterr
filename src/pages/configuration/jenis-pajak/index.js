@@ -22,12 +22,14 @@ const JenisPajak = () => {
   const [items, setItems] = useState([]);
   const [isCrudModalOpen, setCrudModalOpen] = useState(false);
   const [modalMode, setModalMode] = useState('add');
-  const [editItemId, setEditItemId] = useState(null);
+
+  // const [editItemId, setEditItemId] = useState(null);
   const [inputData, setInputData] = useState({ id: '', name: '', description: '' });
 
   const openCrudModal = (mode, item) => {
     setModalMode(mode);
-    setEditItemId(item?.id || null);
+
+    // setEditItemId(item?.id || null);
     setInputData(item || { id: '', name: '', description: '' });
     setCrudModalOpen(true);
   };
@@ -53,7 +55,8 @@ const JenisPajak = () => {
       prevItems.map((item) => (item.id === editItemId ? { ...inputData, id: editItemId } : item))
     );
     setInputData({ id: '', name: '', description: '' });
-    setEditItemId(null);
+
+    // setEditItemId(null);
     setCrudModalOpen(false);
   };
 
@@ -143,7 +146,14 @@ const JenisPajak = () => {
             {items.map((item) => (
               <TableRow key={item.id}>
                 <TableCell>{item.id}</TableCell>
-                <TableCell>{item.name}</TableCell>
+                <TableCell>          <TextField
+                  fullWidth
+                  label="Persentase"
+                  name="description"
+                  value={item.name}
+
+                  variant="outlined"
+                /></TableCell>
                 <TableCell>{item.description}</TableCell>
                 <TableCell>
                   <Button onClick={() => openCrudModal('edit', item)}>Edit</Button>

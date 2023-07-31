@@ -8,7 +8,7 @@ import ListItemText from '@mui/material/ListItemText';
 import Popover from '@mui/material/Popover';
 
 
-const actions = ['Hapus', 'Lihat', 'Edit', 'Cetak'];
+const actions = ['Hapus', 'Lihat', 'Edit', 'Ubah ke Invoice'];
 
 function SimpleDialog(props) {
   const { onClose, selectedValue, anchorEl, open } = props;
@@ -73,7 +73,7 @@ export default function SimpleDialogDemo() {
     setSelectedValue(value);
     switch (value) {
       case 'Hapus':
-        window.location.href = '/delete-page';
+        window.location.href = '/proposal/delete';
         break;
       case 'Lihat':
         window.location.href = '/proposal/view-proposal';
@@ -81,8 +81,8 @@ export default function SimpleDialogDemo() {
       case 'Edit':
         window.location.href = '/proposal/edit-proposal';
         break;
-      case 'Cetak':
-        window.location.href = '/print-page';
+      case 'Ubah ke Invoice':
+        window.location.href = '/invoice/add';
         break;
       default:
         // Do nothing or handle other cases

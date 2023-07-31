@@ -94,11 +94,11 @@ const CrudInputModal = ({ open, onClose, items, setItems }) => {
         >
           {modalMode === 'add' ? 'Add' : 'Save'}
         </Button>
-        {modalMode === 'edit' && (
+        {/* {modalMode === 'edit' && (
           <Button onClick={handleDeleteItem} color="secondary" variant="contained" sx={{ mt: 2 }}>
             Delete
           </Button>
-        )}
+        )} */}
         <Button onClick={onClose} variant="outlined" sx={{ mt: 2 }}>
           Cancel
         </Button>

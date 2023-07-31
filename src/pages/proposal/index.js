@@ -6,7 +6,7 @@ import ProposalTo from './ProposalTo';
 import ButtonProposal from './ButtonProposal';
 import ProposalList from './ProposalList';
 import Paper from '@mui/material/Paper';
-import ButtonList from './ButtonList';
+
 
 
 function Proposal() {

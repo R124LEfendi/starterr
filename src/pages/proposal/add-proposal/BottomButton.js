@@ -20,7 +20,7 @@ function BottomButton() {
   return (
     <div style={{ display: "flex", justifyContent: "space-between", margin: "10px" }}>
       <div style={{ display: "flex", justifyContent: "flex-start", margin: "10px" }}>
-        <Button style={kembali} >
+        <Button href='/proposal' style={kembali} >
           Kembali
         </Button>
       </div>

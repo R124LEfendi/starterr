@@ -59,7 +59,7 @@ function InvoiceList() {
 
               </tr>
               <tr>
-                <td style={tableCell}><ButtonList />></td>
+                <td style={tableCell}><ButtonList /></td>
                 <td style={tableCell}>Data 2</td>
                 <td style={tableCell}>Data 3</td>
                 <td style={tableCell}>Data 1</td>

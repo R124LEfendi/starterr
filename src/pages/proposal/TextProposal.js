@@ -94,7 +94,7 @@ export default function MinHeightTextarea() {
           <Typography variant="h5" component="div" sx={{ flexGrow: 1 }} >
             Informasi Rekening <span style={{ color: 'red' }}>*</span>
           </Typography>
-          <StyledTextarea aria-label="empty textarea" placeholder="Empty" minRows={4}
+          <StyledTextarea aria-label="empty textarea" minRows={4}
             maxRows={4} />
 
         </Grid>

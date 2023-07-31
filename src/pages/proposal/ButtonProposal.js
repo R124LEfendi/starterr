@@ -24,7 +24,7 @@ function ButtonInvoice() {
         }}>
 
         <div style={buttonInvoice}>
-          <Button href='/proposal/edit-proposal' variant="contained" color="primary" >Tambah</Button>
+          <Button href='/proposal/add-proposal' variant="contained" color="primary" >Tambah</Button>
         </div>
 
       </Box>

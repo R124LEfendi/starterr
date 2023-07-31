@@ -7,6 +7,7 @@ import ListItemButton from '@mui/material/ListItemButton';
 import ListItemText from '@mui/material/ListItemText';
 import Popover from '@mui/material/Popover';
 
+
 const actions = ['Hapus', 'Lihat', 'Edit', 'Cetak'];
 
 function SimpleDialog(props) {
@@ -75,10 +76,10 @@ export default function SimpleDialogDemo() {
         window.location.href = '/delete-page';
         break;
       case 'Lihat':
-        window.location.href = '/view-page';
+        window.location.href = '/proposal/view-proposal';
         break;
       case 'Edit':
-        window.location.href = '/edit-page';
+        window.location.href = '/proposal/edit-proposal';
         break;
       case 'Cetak':
         window.location.href = '/print-page';

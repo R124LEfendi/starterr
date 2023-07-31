@@ -1,7 +1,7 @@
 import React from 'react'
 import Grid from '@mui/material/Grid'
 import Box from '@mui/material/Box'
-import AddCalendar from './AddCalendar'
+import AddCalendar from '../AddCalendar'
 import ProposalTo from '../ProposalTo'
 import Reminder from './Reminder'
 import MinHeightTextarea from '../TextProposal'
@@ -22,10 +22,11 @@ function EditProposal() {
             <ProposalTo />
 
             <Reminder />
-
+            {/*
+          <AddButtonProposal /> */}
             <Crud />
 
-
+            {/* <ProposalList /> */}
 
 
 

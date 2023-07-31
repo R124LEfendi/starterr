@@ -4,8 +4,10 @@ import Grid from '@mui/material/Grid';
 import AddCalendar from './AddCalendar';
 import ProposalTo from './ProposalTo';
 import ButtonProposal from './ButtonProposal';
-import ProposalList from './edit-proposal/ProposalList';
+import ProposalList from './ProposalList';
 import Paper from '@mui/material/Paper';
+import ButtonList from './ButtonList';
+
 
 function Proposal() {
   return (
@@ -26,7 +28,9 @@ function Proposal() {
 
             <ProposalList />
 
-            {/* <MinHeightTextarea /> */}
+
+
+
           </Grid>
 
 

@@ -23,7 +23,7 @@ const CrudData = ({ data, onDelete }) => {
   const tableHead = {
 
 
-    color: "purple",
+    color: "white",
   }
 
   const tableCell = {
@@ -43,45 +43,20 @@ const CrudData = ({ data, onDelete }) => {
         <div style={tableContainer} >
 
 
-          {/* <table style={tableContainer}>
-            <thead style={tableHead}>
-              <tr>
-                <th style={tableCell}>Item</th>
-                <th style={tableCell}>Jumlah</th>
-                <th style={tableCell}>Harga</th>
-                <th style={tableCell}>Pajak</th>
-                <th style={tableCell}>Subtotal</th>
-                <th style={tableCell}>Action</th>
-              </tr>
-            </thead>
-            <tbody>
-              {data.map((item, index) => (
-                <tr key={index}>
-                  <td style={tableCell}>{item.item}</td>
-                  <td style={tableCell}>{item.jumlah}</td>
-                  <td style={tableCell}>{item.harga}</td>
-                  <td style={tableCell}>{item.pajak}</td>
-                  <td style={tableCell}>{item.subtotal}</td>
-                  <td>
-                    <button onClick={() => onDelete(index)}>Delete</button>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table> */}
+
           <TableContainer component={Paper}>
             <Table sx={{ minWidth: 700 }} aria-label="spanning table">
-              <TableHead>
+              <TableHead sx={{ backgroundColor: "#7367F0", color: "white" }}>
 
-                <TableRow style={tableCell}>
-                  <TableCell align="right">Item</TableCell>
-                  <TableCell align="right">Jumlah</TableCell>
-                  <TableCell align="right">Harga</TableCell>
-                  <TableCell align="right">Subtotal</TableCell>
-                  <TableCell align="right">Pajak</TableCell>
-                  <TableCell align="right">Total Diskon</TableCell>
-                  <TableCell align="right">Total Setelah Diskon</TableCell>
-                  <TableCell align="right">Action</TableCell>
+                <TableRow  >
+                  <TableCell style={tableHead} align="right">Item</TableCell>
+                  <TableCell style={tableHead} align="right">Jumlah</TableCell>
+                  <TableCell style={tableHead} align="right">Harga</TableCell>
+                  <TableCell style={tableHead} align="right">Subtotal</TableCell>
+                  <TableCell style={tableHead} align="right">Pajak</TableCell>
+                  <TableCell style={tableHead} align="right">Total Diskon</TableCell>
+                  <TableCell style={tableHead} align="right">Total Setelah Diskon</TableCell>
+                  <TableCell style={tableHead} align="right">Action</TableCell>
                 </TableRow>
               </TableHead>
 
@@ -97,17 +72,7 @@ const CrudData = ({ data, onDelete }) => {
                     <TableCell style={tableCell} align="right">{item.discount}</TableCell>
                     <TableCell style={tableCell} align="right">{calculateTotal(item)}</TableCell>
                     <TableCell style={tableCell} align="right"><Button color="error" onClick={() => onDelete(index)}>Delete</Button></TableCell>
-                    {/*
-                    <TableCell></TableCell>
-                    <TableCell align="right">Pajak</TableCell>
-                    <TableCell align="right">{item.tax}</TableCell>
 
-
-                    <TableCell >Diskon</TableCell>
-                    <TableCell align="right">{item.discount}</TableCell>
-
-                    <TableCell >Total</TableCell>
-                    <TableCell align="right">{calculateTotal(item)}</TableCell> */}
                   </TableRow>
 
 
@@ -129,7 +94,7 @@ const CrudData = ({ data, onDelete }) => {
           </TableContainer>
 
         </div>
-      </Box>
+      </Box >
     </>
   );
 };

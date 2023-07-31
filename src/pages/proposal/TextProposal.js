@@ -34,7 +34,7 @@ export default function MinHeightTextarea() {
   const StyledTextarea = styled(TextareaAutosize)(
     ({ theme }) => `
     width: 100%;
-    min-height: 550px;
+
     font-family: IBM Plex Sans, sans-serif;
     font-size: 0.875rem;
     font-weight: 400;
@@ -85,7 +85,8 @@ export default function MinHeightTextarea() {
             aria-label="empty textarea"
             m="100"
             placeholder={value}
-          />
+            minRows={2}
+            maxRows={4} />
         </Grid>
         <Grid item xs={12} xl={7}>
 
@@ -93,7 +94,8 @@ export default function MinHeightTextarea() {
           <Typography variant="h5" component="div" sx={{ flexGrow: 1 }} >
             Informasi Rekening <span style={{ color: 'red' }}>*</span>
           </Typography>
-          <StyledTextarea aria-label="empty textarea" placeholder="Empty" />
+          <StyledTextarea aria-label="empty textarea" placeholder="Empty" minRows={4}
+            maxRows={4} />
 
         </Grid>
       </Grid>

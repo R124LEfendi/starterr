@@ -2,6 +2,9 @@ import React from 'react'
 import Paper from '@mui/material/Paper';
 import Box from '@mui/material/Box';
 import { Button } from '@mui/material';
+import ButtonList from './ButtonList';
+
+
 
 
 function InvoiceList() {
@@ -46,7 +49,7 @@ function InvoiceList() {
 
               </tr>
               <tr>
-                <td style={tableCell}><button>@</button></td>
+                <td style={tableCell}><ButtonList /> </td>
                 <td style={tableCell}>123123145342436547</td>
                 <td style={tableCell}>John Doe</td>
                 <td style={tableCell}>12/12/2020</td>
@@ -56,7 +59,7 @@ function InvoiceList() {
 
               </tr>
               <tr>
-                <td style={tableCell}><button>@</button></td>
+                <td style={tableCell}><ButtonList />></td>
                 <td style={tableCell}>Data 2</td>
                 <td style={tableCell}>Data 3</td>
                 <td style={tableCell}>Data 1</td>
@@ -68,7 +71,7 @@ function InvoiceList() {
             </table>
           </div>
         </Paper >
-      </Box>
+      </Box >
     </>
   )
 }

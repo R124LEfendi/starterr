@@ -1,16 +1,13 @@
 import React from 'react'
-import { useState, useEffect } from 'react'
 import Grid from '@mui/material/Grid'
-import Alert from '@mui/material/Alert'
 import Box from '@mui/material/Box'
 import AddCalendar from '../AddCalendar'
 import ProposalTo from '../ProposalTo'
-import AddButtonProposal from './AddButtonProposal'
-import ProposalList from './ProposalList'
 import Reminder from './Reminder'
 import MinHeightTextarea from '../TextProposal'
 import Crud from './Crud'
 import Paper from '@mui/material/Paper'
+import BottomButton from './BottomButton'
 
 function EditProposal() {
   return (
@@ -34,6 +31,8 @@ function EditProposal() {
 
 
             <MinHeightTextarea />
+
+            <BottomButton />
           </Grid>
 
 

@@ -1,5 +1,5 @@
 // ** React Imports
-import { useState } from 'react'
+import { useContext, useState } from 'react'
 
 // ** Next Imports
 import Link from 'next/link'
@@ -41,6 +41,9 @@ import BlankLayout from 'src/@core/layouts/BlankLayout'
 
 // ** Demo Imports
 import FooterIllustrationsV2 from 'src/views/pages/auth/FooterIllustrationsV2'
+import axios from 'axios'
+import { useRouter } from 'next/router'
+import { AuthContext } from 'src/context/AuthContext'
 
 // ** Styled Components
 const LoginIllustration = styled('img')(({ theme }) => ({
@@ -86,13 +89,14 @@ const schema = yup.object().shape({
 })
 
 const defaultValues = {
-  password: 'admin',
-  email: 'admin@vuexy.com'
+  password: '123456',
+  email: 'rizal@mail.com'
 }
 
 const LoginPage = () => {
   const [rememberMe, setRememberMe] = useState(true)
   const [showPassword, setShowPassword] = useState(false)
+  const { setUser } = useContext(AuthContext)
 
   // ** Hooks
   const auth = useAuth()
@@ -115,15 +119,55 @@ const LoginPage = () => {
     resolver: yupResolver(schema)
   })
 
-  const onSubmit = data => {
+  // fungsi login bawaan vuexy
+
+  // const onSubmit = data => {
+  //   const { email, password } = data
+  //   auth.login({ email, password, rememberMe }, () => {
+  //     setError('email', {
+  //       type: 'manual',
+  //       message: 'Email or Password is invalid'
+  //     })
+  //   })
+  // }
+
+  //fungsi login custom
+
+  const router = useRouter() // react router
+
+  const backendUrl = 'http://127.0.0.1:3333/login' //backend url (adonis)
+
+  const onSubmit = async data => {
     const { email, password } = data
-    auth.login({ email, password, rememberMe }, () => {
-      setError('email', {
-        type: 'manual',
-        message: 'Email or Password is invalid'
-      })
-    })
+    try {
+      //post data user ke backend
+      const response = await axios.post(
+        backendUrl,
+        {
+          email,
+          password
+        },
+        { withCredentials: true }
+      )
+
+      const { token, user } = response?.data?.data //respon backend
+
+      // menyimpan token ke local storage jika remeber me di centang
+      rememberMe ? window.localStorage.setItem('accessToken', token) : null
+      const returnUrl = router.query.returnUrl
+      setUser({ ...user })
+
+      // menyimpan data user ke local storage jika remeber me di centang
+      rememberMe ? window.localStorage.setItem('userData', JSON.stringify(user)) : null
+      const redirectURL = returnUrl && returnUrl !== '/' ? returnUrl : '/'
+      router.replace(redirectURL)
+    } catch (error) {
+      //jika email/password salah
+      alert('Email atau password salah')
+      console.error('Error:', error)
+    }
   }
+
   const imageSource = skin === 'bordered' ? 'auth-v2-login-illustration-bordered' : 'auth-v2-login-illustration'
 
   return (

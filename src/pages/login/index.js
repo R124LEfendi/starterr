@@ -150,10 +150,13 @@ const LoginPage = () => {
         { withCredentials: true }
       )
 
-      const { token, user } = response?.data?.data //respon backend
+      const { token, user } = response?.data?.data
+      console.log(token)
 
-      // menyimpan token ke local storage jika remeber me di centang
-      rememberMe ? window.localStorage.setItem('accessToken', token) : null
+      //respon backend
+
+      // menyimpan token ke local storage jika remember me di centang
+      rememberMe ? window.localStorage.setItem('accessToken', token.token) : null
       const returnUrl = router.query.returnUrl
       setUser({ ...user })
 

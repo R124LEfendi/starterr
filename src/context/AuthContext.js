@@ -30,36 +30,21 @@ const AuthProvider = ({ children }) => {
   const router = useRouter()
   useEffect(() => {
     const initAuth = async () => {
-      const storedToken = window.localStorage.getItem(authConfig.storageTokenKeyName)
-      if (storedToken) {
-        setLoading(true)
-        await axios
-          .get(authConfig.meEndpoint, {
-            headers: {
-              Authorization: storedToken
-            }
-          })
-          .then(async response => {
-            setLoading(false)
-            setUser({ ...response.data.userData })
-          })
-          .catch(() => {
-            localStorage.removeItem('userData')
-            localStorage.removeItem('refreshToken')
-            localStorage.removeItem('accessToken')
-            setUser(null)
-            setLoading(false)
-            if (authConfig.onTokenExpiration === 'logout' && !router.pathname.includes('login')) {
-              router.replace('/login')
-            }
-          })
+      const storedToken = window.localStorage.getItem(authConfig.storageTokenKeyName);
+      const storedUserData = window.localStorage.getItem('userData'); // Ambil data pengguna dari local storage
+
+      if (storedToken && storedUserData) {
+        setLoading(false);
+        setUser(JSON.parse(storedUserData));
+        console.log(storedToken)
       } else {
-        setLoading(false)
+        setLoading(false);
       }
-    }
+    };
     initAuth()
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
+
 
   const handleLogin = (params, errorCallback) => {
     axios
@@ -67,17 +52,17 @@ const AuthProvider = ({ children }) => {
       .then(async response => {
         params.rememberMe
           ? window.localStorage.setItem(authConfig.storageTokenKeyName, response.data.accessToken)
-          : null
-        const returnUrl = router.query.returnUrl
-        setUser({ ...response.data.userData })
-        params.rememberMe ? window.localStorage.setItem('userData', JSON.stringify(response.data.userData)) : null
-        const redirectURL = returnUrl && returnUrl !== '/' ? returnUrl : '/'
-        router.replace(redirectURL)
+          : null;
+        const returnUrl = router.query.returnUrl;
+        setUser({ ...response.data.userData });
+        params.rememberMe ? window.localStorage.setItem('userData', JSON.stringify(response.data.userData)) : null;
+        const redirectURL = returnUrl && returnUrl !== '/' ? returnUrl : '/';
+        router.replace(redirectURL);
       })
       .catch(err => {
-        if (errorCallback) errorCallback(err)
-      })
-  }
+        if (errorCallback) errorCallback(err);
+      });
+  };
 
   const handleLogout = () => {
     setUser(null)
